@@ -684,7 +684,7 @@ body.menu-open .menu-toggle span:last-child {
 }
 
 .portfolio-grid {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(16px, 2.2vw, 30px);
 }
