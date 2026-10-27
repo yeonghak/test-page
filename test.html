@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞牛视频测试</title>
+</head>
+<body>
+    <video
+        id="testVideo"
+        controls
+        playsinline
+        preload="metadata"
+        style="width: 100%; max-width: 900px;"
+    >
+        <source
+            src="https://olanas.top:5667/s/preview/6b86344d34454264ae?fileId=151&path=%2F202607014MV.mp4"
+            type="video/mp4"
+        >
+        当前浏览器不支持视频播放。
+    </video>
+
+    <script>
+        var video = document.getElementById('testVideo');
+
+        video.addEventListener('error', function () {
+            console.log('视频错误代码：', video.error ? video.error.code : '未知');
+            console.log('视频错误信息：', video.error ? video.error.message : '未知');
+        });
+
+        video.addEventListener('loadedmetadata', function () {
+            console.log('视频元数据加载成功');
+            console.log('视频时长：', video.duration);
+            console.log('视频尺寸：', video.videoWidth, video.videoHeight);
+        });
+    </script>
+</body>
+</html>
